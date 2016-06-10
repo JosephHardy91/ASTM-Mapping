@@ -1,0 +1,303 @@
+StID,Object,Parent
+1,ASTM,
+2,Fittings,1
+3,D2466-13 Sch 40 PVC Pipe and Fittings,2
+4,D2683-14 Socket Fittings for PE Pipe,2
+5,D2729-11 PVC Sewer Pipe and Fittings,2
+6,F2206-11 Fab Fittings,2
+7,F2159-14 Plastic Insert Fittings for PEX and PERT,2
+8,F1865-09 Cold Expansion Fittings for PEX,2
+9,F1948-12 Metallic Fittings for Gas Pipe,2
+10,F2390-12 PVC-Recycle DWV Pipe and Fittings,2
+11,F1866-13 Sch 40 PVC DWV Fabricated Fittings,2
+12,F439-13 Sch 80 CPVC Fittings,2
+13,F2135-01 Molded DWV Fittings,2
+14,F2767-12 EF Fittings for PA-12 Pipe and Tube,2
+15,F1055-13 EF Fittings for PE and PEX,2
+16,F1336-07 Gasketed PVC Fittings,2
+17,D3350-14 Standard Specification for Polyethylene Plastics Pipe and Fittings Materials,2
+19,Sch,1
+20,D2466-13 Sch 40 PVC Pipe and Fittings,19
+21,D2661-11 Sch 40 ABS Pipe,19
+22,F480-14 Sch 40 and 80 Well Casings,19
+23,F1866-13 Sch 40 PVC DWV Fabricated Fittings,19
+24,F439-13 Sch 80 CPVC Fittings,19
+25,F437-09 Sch 80 Threaded CPVC Ftgs,19
+26,F628-12 Cellular Core Sch 40 ABS for DWV,19
+27,F438-09 Sch 40 CPVC Socket Ftgs,19
+28,D2464-13 Sch 80 PVC Threaded Ftgs,19
+29,F441-13 Sch 40 and 80 CPVC Pipe,19
+30,F2261-06 Sch 40 and 80 Socket Ftgs for PVC,19
+32,Ftgs,1
+33,F1961-09 Metal Cold Flare Compression Ftgs for PEX,32
+34,F2145-13 PA11 and PA12 Mechanical Ftgs,32
+35,F2600-09 PA11 EF Ftgs,32
+36,F1924-12 Plastic Mech Ftgs for PE Gas Pipe,32
+37,F1545-97 Lined Ferrous Ftgs,32
+38,D2513-14 PE Gas Pipe and Ftgs,32
+39,F1970-12 Special Valves and Ftgs for PVC and CPVC,32
+40,F437-09 Sch 80 Threaded CPVC Ftgs,32
+41,F610-10 Heat Reversion Testing for PVC Ftgs,32
+42,D2609-02 Plastic Insert Ftgs for PE Pipe,32
+43,F2620-13 Heat Fusion of PE  Pipe and Ftgs,32
+44,D3261-12 Butt Heat Fusion Ftgs for PE,32
+45,F438-09 Sch 40 CPVC Socket Ftgs,32
+46,F1974-09 Insert Ftgs for PE-AL-PE,32
+47,F2080-12 Cold Exp Ftgs for PEX,32
+48,F2897-14 Tracking and Traceability of PE Gas Pipe and Ftgs,32
+49,F2854-10 Push Fit Ftgs for PEX,32
+50,F405-13 Corrug PE Pipe and Ftgs,32
+51,F409-12 Replaceable Thermoplastic Pipe and Ftgs,32
+52,D2464-13 Sch 80 PVC Threaded Ftgs,32
+53,F2434-14 Metal Insert Ftgs for PEX and PEX-AL-PEX,32
+54,F1960-14 Cold Exp Ftgs for PEX,32
+55,F2261-06 Sch 40 and 80 Socket Ftgs for PVC,32
+56,F1986-01 Compression Ftgs for Multilayer Pipe,32
+58,Testing,1
+59,F2231-02 Charpy Impact Testing,58
+60,F2023-13 ORP Testing of PEX,58
+61,F2164-13 Hydro Field Leak Testing,58
+62,F2786-10 Pneumatic Field Leak Testing,58
+63,D1598-02 Hydrostatic Testing of Plastic Pipe,58
+64,F1802-04 Testing Excess Flow Valves,58
+65,F2018-00 Plane Strain Tensile Testing,58
+66,F610-10 Heat Reversion Testing for PVC Ftgs,58
+67,F2928-13 Testing PE Butt Fusions,58
+68,F1365-91 Infiltration Testing Elastomeric Joints,58
+69,F948-94 Testing under Internal Flow,58
+70,F2487-13 Infiltration-Exfiltration Testing,58
+71,F1057-10 Heat Reversion Testing of PVC,58
+73,Gas,1
+74,F2207-06 CIP Rehab of Metallic Gas Pipe,73
+75,F2785-12 PA 12 Gas Pipe,73
+76,F1563-01 PE Gas Pipe Squeeze Off Tools,73
+77,F1948-12 Metallic Fittings for Gas Pipe,73
+78,F1924-12 Plastic Mech Ftgs for PE Gas Pipe,73
+79,F1804-08 Tensile Load for Pulled In Gas Pipe,73
+80,D2513-14 PE Gas Pipe and Ftgs,73
+81,F1025-94 Full Circle Band Clamps for PE Gas Pipe,73
+82,F2817-13 PVC Gas Pipe,73
+83,F2905-13 Black PEX for Oil and Gas,73
+84,F2830-11 PE Gas Pipe with Peelable PP Layer,73
+85,F2818-10 PEX Gas Pipe,73
+86,F1041-02 Squeeze off of PE Gas Pipe,73
+87,F2897-14 Tracking and Traceability of PE Gas Pipe and Ftgs,73
+88,F689-97 Temperatures in PE Gas Risers,73
+89,F2896-11 PE Composite Pipe for Oil and Gas,73
+91,Pipe,1
+92,F913-02 Elastomeric Seals for Plastic Pipe,91
+93,F2433-05 Determining Pipe Wall Stiffness,91
+94,D2321-14 Underground Installation of Thermoplastic Gravity Pipe,91
+95,F645-13 Design and Installation of Water Pressure Pipe,91
+96,D2466-13 Sch 40 PVC Pipe and Fittings,91
+97,D2774-12 Underground Installation of Thermoplastic Pressure Pipe,91
+98,D2683-14 Socket Fittings for PE Pipe,91
+99,F2207-06 CIP Rehab of Metallic Gas Pipe,91
+100,D2729-11 PVC Sewer Pipe and Fittings,91
+101,F1483-12 PVCO Pipe,91
+102,F2785-12 PA 12 Gas Pipe,91
+103,F1563-01 PE Gas Pipe Squeeze Off Tools,91
+104,D2661-11 Sch 40 ABS Pipe,91
+105,F2510-07 Concrete Manhole Connections for Corrugated PE Pipe,91
+106,F2263-14 Chlorine Resistance Test for PE Pipe,91
+107,F1948-12 Metallic Fittings for Gas Pipe,91
+108,F2619-13 PE Line Pipe,91
+109,F810-12 Smoothwall PE Drainage Pipe,91
+110,F2855-12 CPVC-AL-CPVC Composite Pipe,91
+111,F2768-09 ACME Thread Joints for Plastic Pipe,91
+112,F2736-13 Corrug PP Pipe,91
+113,F1732-12 PVC Sewer Pipe with Recycle,91
+114,F1668-08 Construction Procedures for Buried Plastic Pipe,91
+115,F2390-12 PVC-Recycle DWV Pipe and Fittings,91
+116,D3122-95 Solvent Cement for SR Pipe,91
+117,F2788-13 Metric and Inch PEX Pipe,91
+118,F1924-12 Plastic Mech Ftgs for PE Gas Pipe,91
+119,D2241-09 PVC Pressure Pipe,91
+120,F1804-08 Tensile Load for Pulled In Gas Pipe,91
+121,F1803-06 Closed Profile PVC Pipe,91
+122,D2513-14 PE Gas Pipe and Ftgs,91
+123,F2763-11 Triple Wall PE Pipe,91
+124,F2562-08 Steel Reinforced Thermoplastic Pipe,91
+125,F1025-94 Full Circle Band Clamps for PE Gas Pipe,91
+126,F1733-13 Heat Fusion of PA Pipe,91
+127,F1498-08 Tapered Threads for Plastic Pipe,91
+128,F2817-13 PVC Gas Pipe,91
+129,F2767-12 EF Fittings for PA-12 Pipe and Tube,91
+130,D1598-02 Hydrostatic Testing of Plastic Pipe,91
+131,F1674-11 Joinit Restraints for  PVC Pipe,91
+132,F1290-98 EF Joining PO Pipe,91
+133,F1488-09 Coextruded Composite Pipe,91
+134,D2837-13 Obtaining an HDB or PDB for Plastic Pipe,91
+135,F2986-12 Corrug PE Pipe for Mine Leach Fields,91
+136,D2609-02 Plastic Insert Ftgs for PE Pipe,91
+137,F2620-13 Heat Fusion of PE  Pipe and Ftgs,91
+138,D2852-95 Styrene Rubber Pipe,91
+139,F2806-10 Metric ABS Pipe,91
+140,F585-13 Slipliining with Pe Pipe,91
+141,F2306-13 Annular Corrug PE Profile Pipe,91
+142,F794-03 ID Controlled PVC Sewer Pipe,91
+143,F2686-14 Glass Fiber Reinforced Thermoplastic Pipe,91
+144,F449-02 Installation of Agricultural Drain Pipe,91
+145,"D1785-12 Shc 40, 80 and 120 PVC Pipe",91
+146,D2680-01 ABS-PVC Composite Pipe,91
+147,F2987-12 Corrug PE Pipe for Mine Heap Leaching,91
+148,F1412-09 Polyolefin Pipe for Corrosive DWV,91
+149,F1499-12 Composite DWV Pipe,91
+150,F2830-11 PE Gas Pipe with Peelable PP Layer,91
+151,D2749-13 Symbols for Plastic Pipe Dimensions,91
+152,F2762-11 Annular Corrug PE Pipe for Sanitary Sewer,91
+153,F679-13 LD PVC Sewer Pipe,91
+154,F2818-10 PEX Gas Pipe,91
+155,F1041-02 Squeeze off of PE Gas Pipe,91
+156,F667-12 3-24 Inch Corrugated PE Pipe,91
+157,F2897-14 Tracking and Traceability of PE Gas Pipe and Ftgs,91
+158,F405-13 Corrug PE Pipe and Ftgs,91
+159,F409-12 Replaceable Thermoplastic Pipe and Ftgs,91
+160,F714-13 OD Controlled PE Pipe,91
+161,F949-10 Corrug PVC Sewer Pipe,91
+162,F2880-14 Lap Joint Flange Adapters for PE Pipe,91
+163,F1282-10 PE-AL-PE Pressure Pipe,91
+164,F441-13 Sch 40 and 80 CPVC Pipe,91
+165,F2947-14 Annular Corr PE Sanitary Pipe,91
+166,F442-13 CVPC Pipe,91
+167,D3350-14 Standard Specification for Polyethylene Plastics Pipe and Fittings Materials,91
+168,D2949-10 3.25 in PVC DWV Pipe,91
+169,F2969-12 IPS Sized ABS Pipe,91
+170,F2807-13 Multilayer PE-PA Pipe,91
+171,F1901-10 PE Pipe for Roof Drain Systems,91
+172,F2896-11 PE Composite Pipe for Oil and Gas,91
+173,F2389-10 PP Pressure Pipe,91
+174,F894-13 Large Diameter PE Profile Pipe,91
+175,F1504-14 Folded PVC Pipe,91
+176,F2881-11 Dual Wall PP Pipe,91
+177,F2648-13 Annular Corrugated PE Pipe for Landfills,91
+178,F1986-01 Compression Ftgs for Multilayer Pipe,91
+180,PVC,1
+181,D2466-13 Sch 40 PVC Pipe and Fittings,180
+182,D2729-11 PVC Sewer Pipe and Fittings,180
+183,F1698-02 Installation of PVC Strip Liners,180
+184,F1871-11 Fold and Form PVC Type A,180
+185,F1741-08 In-situ PVC Spiral Wound Rehab,180
+186,F512-12 Smooth wall PVC Conduit,180
+187,D2665-14 PVC DWV Systems,180
+188,F1732-12 PVC Sewer Pipe with Recycle,180
+189,F1866-13 Sch 40 PVC DWV Fabricated Fittings,180
+190,F1867-06 Fold and Form PVC,180
+191,F1697-09 Rehab with Sprial Wound PVC Strip Liner,180
+192,D2241-09 PVC Pressure Pipe,180
+193,F1803-06 Closed Profile PVC Pipe,180
+194,F1970-12 Special Valves and Ftgs for PVC and CPVC,180
+195,F2658-07 DR 51 and 64 Type PSM PVC,180
+196,F758-14 Smooth Wall PVC Underdrain,180
+197,F2817-13 PVC Gas Pipe,180
+198,F1674-11 Joinit Restraints for  PVC Pipe,180
+199,F610-10 Heat Reversion Testing for PVC Ftgs,180
+200,F891-10 Cellular Core PVC,180
+201,F1760-01 Coex PVC with Recycle,180
+202,D2855-96 Making Solvent Cement Joints in PVC,180
+203,F794-03 ID Controlled PVC Sewer Pipe,180
+204,"D1785-12 Shc 40, 80 and 120 PVC Pipe",180
+205,F656-10 Primers for PVC Solvent Cement,180
+206,D2152-13 Acetone Immerison Test for PVC,180
+207,F1336-07 Gasketed PVC Fittings,180
+208,F679-13 LD PVC Sewer Pipe,180
+209,D2464-13 Sch 80 PVC Threaded Ftgs,180
+210,F949-10 Corrug PVC Sewer Pipe,180
+211,D2949-10 3.25 in PVC DWV Pipe,180
+212,F1947-10 Folded PVC Liners,180
+213,F1735-09 PVC Strip Liners,180
+214,D2564-12 Solvent Cement for PVC,180
+215,F2261-06 Sch 40 and 80 Socket Ftgs for PVC,180
+216,F1504-14 Folded PVC Pipe,180
+217,F1057-10 Heat Reversion Testing of PVC,180
+218,F2946-12 PVC Tee Connections,180
+220,Systems,1
+221,D6070-02 Test Methods for Cable in Conduit Systems,220
+222,D2665-14 PVC DWV Systems,220
+223,F2718-09 FIPLS Systems,220
+224,F2829-10 Metric PEX Systems,220
+225,D2846-14 CPVC Distribution Systems,220
+226,F2994-13 Automated CIP Systems,220
+227,F2831-12 Epoxy Barrier Lining Systems,220
+228,F2618-09 CPVC Chem Waste Systems,220
+229,F1987-01 Multilayer Hydronic Heating Systems,220
+230,F2769-10 PERT Distribution Systems,220
+231,F1901-10 PE Pipe for Roof Drain Systems,220
+232,F1673-10 PVDF DWV Systems,220
+234,PE,1
+235,D2683-14 Socket Fittings for PE Pipe,234
+236,F1563-01 PE Gas Pipe Squeeze Off Tools,234
+237,F2510-07 Concrete Manhole Connections for Corrugated PE Pipe,234
+238,F2263-14 Chlorine Resistance Test for PE Pipe,234
+239,F2619-13 PE Line Pipe,234
+240,F810-12 Smoothwall PE Drainage Pipe,234
+241,F11056-04 Socket Fusion Tools for PE,234
+242,F2737-11 PE Water Quality Units,234
+243,F2649-14 Corr PE Grease Tanks,234
+244,F1924-12 Plastic Mech Ftgs for PE Gas Pipe,234
+245,D2513-14 PE Gas Pipe and Ftgs,234
+246,F2634-10 High Speed Tensile Impact Test for PE Fusion,234
+247,F2763-11 Triple Wall PE Pipe,234
+248,F1606-05 Sewer Rehab with Deformed PE Liner,234
+249,F1025-94 Full Circle Band Clamps for PE Gas Pipe,234
+250,F905-04 Qualification of PE Saddle Joints,234
+251,F1533-01 Deformed PE Liner,234
+252,F2928-13 Testing PE Butt Fusions,234
+253,F2986-12 Corrug PE Pipe for Mine Leach Fields,234
+254,D2609-02 Plastic Insert Ftgs for PE Pipe,234
+255,F2620-13 Heat Fusion of PE  Pipe and Ftgs,234
+256,D3261-12 Butt Heat Fusion Ftgs for PE,234
+257,F2306-13 Annular Corrug PE Profile Pipe,234
+258,F1055-13 EF Fittings for PE and PEX,234
+259,F2922-13 PE Stormwater Chambers,234
+260,F2719-09 Rehab by Installion of PE and Encapsulated Cement Mortar,234
+261,F2987-12 Corrug PE Pipe for Mine Heap Leaching,234
+262,F2830-11 PE Gas Pipe with Peelable PP Layer,234
+263,F2762-11 Annular Corrug PE Pipe for Sanitary Sewer,234
+264,F1041-02 Squeeze off of PE Gas Pipe,234
+265,F667-12 3-24 Inch Corrugated PE Pipe,234
+266,F2897-14 Tracking and Traceability of PE Gas Pipe and Ftgs,234
+267,F689-97 Temperatures in PE Gas Risers,234
+268,F405-13 Corrug PE Pipe and Ftgs,234
+269,F714-13 OD Controlled PE Pipe,234
+270,F2880-14 Lap Joint Flange Adapters for PE Pipe,234
+271,F2947-14 Annular Corr PE Sanitary Pipe,234
+272,F1901-10 PE Pipe for Roof Drain Systems,234
+273,F2896-11 PE Composite Pipe for Oil and Gas,234
+274,F894-13 Large Diameter PE Profile Pipe,234
+275,F2648-13 Annular Corrugated PE Pipe for Landfills,234
+277,Test,1
+278,D2412-11 Parallel Plate Test,277
+279,F1588-96 Constant Tensile Load Joint Test,277
+280,D1603-2014 Standard Test Method for Carbon Black Content in Olefin Plastics,277
+281,F2263-14 Chlorine Resistance Test for PE Pipe,277
+282,D6070-02 Test Methods for Cable in Conduit Systems,277
+283,D2290-12 Ring Tensile Test,277
+284,F1417-11 Low Pressure Air Test for Non-pressure Sewers,277
+285,F2634-10 High Speed Tensile Impact Test for PE Fusion,277
+286,D638-2014 Standard Test Method for Tensile Properties of Plastics,277
+287,F725-03 Impact Test Requirements,277
+288,F2136-08 NCLS Test,277
+289,D1238-2013 Standard Test Method for Melt Flow Rates of Thermoplastics by Extrusion Plastometer,277
+290,D1599-14 Quick Burst Test,277
+291,D2152-13 Acetone Immerison Test for PVC,277
+292,D2444-99 Falling Tup Test Method,277
+293,F1473-13 PENT Test,277
+294,D792-2013 Standard Test Methods for Density and Specific Gravity of Plastics by Displacement,277
+296,PEX,1
+297,F2098-08 SS Clamps for DR 9 PEX,296
+298,F1961-09 Metal Cold Flare Compression Ftgs for PEX,296
+299,F2023-13 ORP Testing of PEX,296
+300,F2159-14 Plastic Insert Fittings for PEX and PERT,296
+301,F1865-09 Cold Expansion Fittings for PEX,296
+302,F2929-13 PEX For Radiant Heating,296
+303,F2657-07 Outdoor Weathering of PEX,296
+304,F2788-13 Metric and Inch PEX Pipe,296
+305,F2829-10 Metric PEX Systems,296
+306,F2905-13 Black PEX for Oil and Gas,296
+307,F1055-13 EF Fittings for PE and PEX,296
+308,F2080-12 Cold Exp Ftgs for PEX,296
+309,F2818-10 PEX Gas Pipe,296
+310,F2854-10 Push Fit Ftgs for PEX,296
+311,F2434-14 Metal Insert Ftgs for PEX and PEX-AL-PEX,296
+312,F1960-14 Cold Exp Ftgs for PEX,296
