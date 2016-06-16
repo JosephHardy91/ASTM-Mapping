@@ -7,21 +7,24 @@ class Searcher(object):
         self.extension = os.path.splitext(file)[1]
         # self.ext_dict = {'.docx': self.search_docx_for_tags, '.txt': self.search_txt_for_tags,
         #                  '.xlsx': self.search_xlsx_for_tags}
-        self.tags = {'QD': 'QD(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?', 'SOP': 'SOP (\d+(?: |-)\d+)(?: )?(.+)?(?:\t|\n)?',
+        self.tags = {'QD': 'QD(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?',
+                     'SOP': 'SOP(?:| )(\d+(?: |-)\d+)(?: )?(.+)?(?:\t|\n)?',
                      'TD': 'TD(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?', 'FUS': 'FUS(\d+.\d+)(?: )?(.+)?(?:\t|\n)?',
-                     'ST': 'ST(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?', 'SR': 'SR(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?'}
+                     'ST': 'ST(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?', 'SR': 'SR(?: |-)(\d+)(?: )?(.+)?(?:\t|\n)?',
+                     'ASTM': '(?:ASTM)?(?:| )?([D,F]\d+-\d+)?(?:| )?(.+)'}
         self.known_files_dict = file_in_cat_dict
 
     def search(self):
         # self.results = self.ext_dict[self.extension]()
         self.results = {}
-        data = open(self.path, 'rb').read()
+        data = open(self.path, 'r').read()
         for tag in self.tags:
-            self.results[tag] = re.findall(self.tags[tag], data)
-        for category in self.known_files_dict:
-            for file in self.known_files_dict[category]:
-                if re.search(file, data):
-                    self.results[category].append(re.findall(file, data))
+            self.results[tag] = dict(re.findall(self.tags[tag], data))
+        # for category in self.known_files_dict:
+        #     if len(self.known_files_dict[category])>0:
+        #         for file in self.known_files_dict[category]:
+        #             if file in data:
+        #                 self.results[category].append(file)
                     #     #return results
                     # def search_docx_for_tags(self):
                     #     pass

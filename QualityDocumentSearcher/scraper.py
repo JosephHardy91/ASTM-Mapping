@@ -12,6 +12,7 @@ from compoundfiles import CompoundFileReader, CompoundFileError
 from struct import unpack
 import xlrd
 import openpyxl
+import jellyfish as jf
 
 
 def doc2text(path):
@@ -23,7 +24,7 @@ def doc2text(path):
         doc = f.read()
         f.close()
     except:
-        cr.close();
+        cr.close()
         raise CompoundFileError, "The file is corrupted or it is not a Word document at all."
     # Extract file information block and piece table stream informations from it:
     fib = doc[:1472]
@@ -75,33 +76,111 @@ def doc2text(path):
 
 
 class Scraper(object):
-    def __init__(self, qdpath):
+    def __init__(self, qdpath, option):
         self.qd_path = qdpath
+        self.option = option
 
     def walk(self):
         self.qd_dict = defaultdict(list)
         osobjs = os.walk(self.qd_path)
         for sub, dir, files in osobjs:
             for file in files:
-                if not self.is_txt(file):
+                if not self.is_txt(file) and self.option == "2b":
                     file = self.convert_to_txt(os.path.join(sub, file))
-                self.qd_dict[sub].append(file)
-                # if self.is_astm_standard(osobj):
-                #     id, title = re.findall('([D,F]\d+-\d+) (.+)', os.path.splitext(osobj)[0])[0]
-                #     self.titles_dict[id] = title
+                    self.qd_dict[sub].append(file)
+                elif self.is_txt(file):
+                    self.qd_dict[sub].append(file)
+                    # if self.is_astm_standard(osobj):
+                    #     id, title = re.findall('([D,F]\d+-\d+) (.+)', os.path.splitext(osobj)[0])[0]
+                    #     self.titles_dict[id] = title
 
     def scrape(self):
         self.scrape_results = defaultdict(lambda: defaultdict(list))
         for category_of_document_path in self.qd_dict:
             for file in self.qd_dict[category_of_document_path]:
                 s = Searcher(category_of_document_path, file, self.qd_dict)
+                s.search()
                 self.scrape_results[os.path.split(category_of_document_path)[1]][os.path.splitext(file)[0]] = s.results
+        print len(self.scrape_results)
+
+    def organize_results(self):
+        self.structured_references = defaultdict(lambda: defaultdict(list))
+        self.tagContradictions = []
+        self.notReferenced = []
+        #print self.scrape_results
+        for category in self.scrape_results:
+            for file_name in self.scrape_results[category]:
+                for tag in self.scrape_results[category][file_name]:
+                    finds = self.scrape_results[category][file_name][tag][0]
+                    known_files = []
+                    if len(self.scrape_results[category][file_name][tag]) > 1:
+                        known_files = self.scrape_results[category][file_name][tag][1:]
+                    referenced = False
+                    for find in finds:
+                        idtag, title = find[0], find[1]
+                        print idtag, title
+                        for tag2 in self.structured_references:
+                            for id in self.structured_references[tag2]:
+                                if id in idtag or idtag in id:
+                                    referenced = True
+                                    if len(self.structured_references[tag2][id]) == 0:
+                                        if title.strip() != '':
+                                            self.structured_references[tag2][id] = [title, {title: [file_name]}]
+                                    elif title in self.structured_references[tag2][id][1] or max(
+                                            [jf.jaro_winkler(unicode(title), unicode(t)) for t in
+                                             self.structured_references[tag2][id][1]]) > 0.85:
+                                        if title.strip() != '':
+                                            self.structured_references[tag2][id][1][title].append(file_name)
+                                    else:
+                                        if title.strip() != '':
+                                            self.structured_references[tag2][id][1][title] = [file_name]
+                                else:
+                                    if len(self.structured_references[tag2][id]) != 0:
+                                        if title in self.structured_references[tag2][id][1] or max(
+                                                [jf.jaro_winkler(unicode(title), unicode(t)) for t in
+                                                 self.structured_references[tag2][id][1]]) > 0.85:
+                                            if idtag.strip() == '' and title.strip() != '':
+                                                referenced = True
+                                                self.structured_references[tag2][id][1][title].append(file_name)
+                                            elif title.strip() != '':
+                                                self.tagContradictions.append(
+                                                    [file_name, self.scrape_results[category][file_name], tag2, id])
+                    if not referenced:
+                        self.notReferenced.append([file_name, self.scrape_results[category][file_name]])
+        print len(self.structured_references)
+        self.vote_and_restructure()
+        self.flip_references()
+
+    def vote_and_restructure(self):
+        self.shunned_titles = defaultdict(lambda: defaultdict(list))
+        for tag in self.structured_references:
+            for id in self.structured_references[tag]:
+                votes_dict = {title: len(self.structured_references[tag][id][1][title]) for title in
+                              self.structured_references[tag][id][1]}
+                votes_list = [(title, votes_dict[title]) for title in
+                              sorted(votes_dict, key=votes_dict.get, reverse=True)]
+                self.structured_references[tag][id] = [votes_list[0],
+                                                       [title for title in self.structured_references[tag][id][1]]]
+                self.shunned_titles[tag][id] = votes_list[1:]
+
+    def flip_references(self):
+        self.linkage_dictionary = defaultdict(list)
+        for tag in self.structured_references:
+            for id in self.structured_references[tag]:
+                for title in self.structured_references[tag][id][1]:
+                    self.linkage_dictionary[title].append(' '.join([tag, id, self.structured_references[tag][id][0]]))
 
     def output_results(self, output_path):
         with open(output_path, 'wb') as outcsv:
             csvwriter = csv.writer(outcsv, delimiter=',', quoting=csv.QUOTE_MINIMAL, quotechar='"')
-            csvwriter.writerow(['Standard ID', 'Standard Title'])
-            csvwriter.writerows(zip(self.titles_dict.keys(), self.titles_dict.values()))
+            csvwriter.writerow(['Document', 'Links'])
+            for title in self.linkage_dictionary:
+                csvwriter.writerrow([title, ','.join(self.linkage_dictionary[title])])
+                # for category in self.scrape_results:
+                #     for file in self.scrape_results[category]:
+                #         csvwriter.writerow([category, file, ",".join()])
+                # [' '.join([tag, t]) for tag in self.scrape_results[category][file] for c in
+                #  self.scrape_results[category][file][tag] for t in c])])
 
     # def is_astm_reference(self, file_name):
     #     try:
@@ -139,15 +218,15 @@ class Scraper(object):
         elif extension == '.docx':
             document = docx.Document(data)
             text = [paragraph.text for paragraph in document.paragraphs]
-            text.extend([cell.text for table in document.tables for row in table._Rows for cell in row])
+            text.extend([cell.text for table in document.tables for row in table.rows for cell in row.cells])
             with open(os.path.splitext(data)[0] + '.txt', 'wb') as output_file:
-                output_file.write('\n'.join(text))
+                output_file.write('\n'.join([c for x in text for c in x if 32 <= ord(c) <= 127]))
 
             return os.path.splitext(data)[0] + '.txt'
 
         elif extension == '.doc':
             with open(os.path.splitext(data)[0] + '.txt', 'wb') as output_file:
-                output_file.write(doc2text(data))
+                output_file.write("\n".join([x for x in doc2text(data) if 32 <= ord(x) <= 127]))
 
             return os.path.splitext(data)[0] + '.txt'
 
@@ -155,7 +234,7 @@ class Scraper(object):
             wb = openpyxl.Workbook(data)
             text = [cell.value for ws in wb for cell in ws.rows]
             with open(os.path.splitext(data)[0] + '.txt', 'wb') as output_file:
-                output_file.write("\n".join(text))
+                output_file.write("\n".join([x for x in text if 32 <= ord(x) <= 127]))
 
             return os.path.splitext(data)[0] + '.txt'
 
@@ -163,6 +242,6 @@ class Scraper(object):
             wb = xlrd.open_workbook(data)
             text = [cell.value for ws in wb.sheets() for row in ws.get_rows() for cell in row]
             with open(os.path.splitext(data)[0] + '.txt', 'wb') as output_file:
-                output_file.write("\n".join(text))
+                output_file.write("\n".join([str(x) for x in text]))
 
             return os.path.splitext(data)[0] + '.txt'
